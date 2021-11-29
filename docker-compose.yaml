@@ -1,0 +1,21 @@
+# docker-compose.yaml
+version: "3.7"
+
+services:
+  go-todo:
+    container_name: go-todo
+    image: gprestes/go-todo:dev
+    build:
+      context: .
+      target: dev
+    volumes:
+      - .:/app
+    ports:
+      - "5100:5100"
+      - "2345:2345"
+    networks:
+      - go-todo-network
+
+networks:
+  go-todo-network:
+    name: go-todo-network
