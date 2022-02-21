@@ -1,3 +1,4 @@
+// main.go
 package main
 
 import (
@@ -5,18 +6,18 @@ import (
 
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/cors"
+	"github.com/gprestes/go-todo/database"
+	"github.com/gprestes/go-todo/todo"
 )
 
 func main() {
 	app := fiber.New()
 	app.Use(cors.New())
+	database.ConnectDB()
+	defer database.DB.Close()
 
 	api := app.Group("/api")
-
-	//Test handler
-	api.Get("/", func(c *fiber.Ctx) error {
-		return c.SendString("App running")
-	})
+	todo.Register(api, database.DB)
 
 	log.Fatal(app.Listen(":5100"))
 }
