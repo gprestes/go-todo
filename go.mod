@@ -6,7 +6,7 @@ require (
 	github.com/gofiber/fiber/v2 v2.37.0
 	github.com/jinzhu/gorm v1.9.16
 	github.com/joho/godotenv v1.4.0
-	github.com/lib/pq v1.10.6
+	github.com/lib/pq v1.10.7
 )
 
 require (
