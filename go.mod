@@ -3,7 +3,7 @@ module github.com/gprestes/go-todo
 go 1.25.0
 
 require (
-	github.com/gofiber/fiber/v2 v2.52.11
+	github.com/gofiber/fiber/v3 v3.0.0
 	github.com/gofiber/fiber/v3 v3.0.0
 	github.com/jinzhu/gorm v1.9.16
 	github.com/joho/godotenv v1.5.1
